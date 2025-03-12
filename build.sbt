@@ -14,7 +14,12 @@ inThisBuild(
     githubWorkflowJavaVersions := Seq(JavaSpec.temurin("17")),
     tlUntaggedAreSnapshots := false,
     crossScalaVersions := Seq(scala213Version, scala3Version),
-    scalaVersion := scala3Version
+    scalaVersion := scala3Version,
+    tlFatalWarnings := true,
+    tlCiHeaderCheck := true,
+    tlCiScalafixCheck := true,
+    semanticdbEnabled := true,
+    semanticdbVersion := scalafixSemanticdb.revision
   )
 )
 
@@ -29,7 +34,7 @@ lazy val circe = crossProject(JVMPlatform, JSPlatform, NativePlatform)
   .in(file("modules/circe"))
   .settings(
     name := "aws-regions-circe",
-    libraryDependencies += "io.circe" %%% "circe-core" % "0.14.10"
+    libraryDependencies += "io.circe" %%% "circe-core" % "0.14.8"
   )
   .dependsOn(core)
 
