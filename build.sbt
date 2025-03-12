@@ -7,6 +7,8 @@ ThisBuild / licenses := Seq(License.Apache2)
 ThisBuild / developers ++= List(
   tlGitHubDev("vlovgr", "Viktor Rudebeck")
 )
+ThisBuild / sonatypeCredentialHost := xerial.sbt.Sonatype.sonatypeCentralHost
+ThisBuild / tlUntaggedAreSnapshots := false // Remove after https://github.com/typelevel/sbt-typelevel/issues/784
 
 val Scala3 = "3.3.5"
 ThisBuild / crossScalaVersions := Seq("2.13.16", Scala3)
