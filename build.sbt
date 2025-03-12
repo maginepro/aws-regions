@@ -3,23 +3,24 @@ val scala3Version = "3.3.5"
 
 inThisBuild(
   Seq(
-    tlBaseVersion := "1.0",
+    crossScalaVersions := Seq(scala213Version, scala3Version),
+    developers := List(tlGitHubDev("vlovgr", "Viktor Rudebeck")),
+    githubWorkflowJavaVersions := Seq(JavaSpec.temurin("17")),
+    licenses := Seq(License.Apache2),
     organization := "com.magine",
     organizationName := "Magine Pro",
-    startYear := Some(2025),
-    licenses := Seq(License.Apache2),
-    developers ++= List(
-      tlGitHubDev("vlovgr", "Viktor Rudebeck")
-    ),
-    githubWorkflowJavaVersions := Seq(JavaSpec.temurin("17")),
-    tlUntaggedAreSnapshots := false,
-    crossScalaVersions := Seq(scala213Version, scala3Version),
     scalaVersion := scala3Version,
-    tlFatalWarnings := true,
+    semanticdbEnabled := true,
+    semanticdbVersion := scalafixSemanticdb.revision,
+    startYear := Some(2025),
+    tlBaseVersion := "1.0",
     tlCiHeaderCheck := true,
     tlCiScalafixCheck := true,
-    semanticdbEnabled := true,
-    semanticdbVersion := scalafixSemanticdb.revision
+    tlCiScalafmtCheck := true,
+    tlFatalWarnings := true,
+    tlJdkRelease := Some(8),
+    tlUntaggedAreSnapshots := false,
+    versionScheme := Some("early-semver")
   )
 )
 
