@@ -14,7 +14,8 @@ libraryDependencies ++= Seq(
 )
 ```
 
-Make sure to replace `awsRegionsVersion` with a [release version](https://github.com/maginepro/aws-regions/releases).
+Make sure to replace `awsRegionsVersion` with a [release version](https://github.com/maginepro/aws-regions/releases).<br>
+Replace `%%` with `%%%` if you are using [Scala.js](https://www.scala-js.org) or [Scala Native](https://scala-native.org).
 
 ## Quick Example
 
