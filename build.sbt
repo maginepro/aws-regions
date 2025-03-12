@@ -10,6 +10,7 @@ inThisBuild(
     developers ++= List(
       tlGitHubDev("vlovgr", "Viktor Rudebeck")
     ),
+    githubWorkflowJavaVersions := Seq(JavaSpec.temurin("17")),
     tlUntaggedAreSnapshots := false,
     crossScalaVersions := Seq("2.13.16", scala3Version),
     scalaVersion := scala3Version
