@@ -1,17 +1,20 @@
-ThisBuild / tlBaseVersion := "1.0"
+val scala3Version = "3.3.5"
 
-ThisBuild / organization := "com.magine"
-ThisBuild / organizationName := "Magine Pro"
-ThisBuild / startYear := Some(2025)
-ThisBuild / licenses := Seq(License.Apache2)
-ThisBuild / developers ++= List(
-  tlGitHubDev("vlovgr", "Viktor Rudebeck")
+inThisBuild(
+  Seq(
+    tlBaseVersion := "1.0",
+    organization := "com.magine",
+    organizationName := "Magine Pro",
+    startYear := Some(2025),
+    licenses := Seq(License.Apache2),
+    developers ++= List(
+      tlGitHubDev("vlovgr", "Viktor Rudebeck")
+    ),
+    tlUntaggedAreSnapshots := false,
+    crossScalaVersions := Seq("2.13.16", scala3Version),
+    scalaVersion := scala3Version
+  )
 )
-ThisBuild / tlUntaggedAreSnapshots := false
-
-val Scala3 = "3.3.5"
-ThisBuild / crossScalaVersions := Seq("2.13.16", Scala3)
-ThisBuild / scalaVersion := Scala3
 
 lazy val root = tlCrossRootProject
   .aggregate(core, circe, ciris)
