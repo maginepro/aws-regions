@@ -1,3 +1,4 @@
+val scala213Version = "2.13.16"
 val scala3Version = "3.3.5"
 
 inThisBuild(
@@ -12,7 +13,7 @@ inThisBuild(
     ),
     githubWorkflowJavaVersions := Seq(JavaSpec.temurin("17")),
     tlUntaggedAreSnapshots := false,
-    crossScalaVersions := Seq("2.13.16", scala3Version),
+    crossScalaVersions := Seq(scala213Version, scala3Version),
     scalaVersion := scala3Version
   )
 )
