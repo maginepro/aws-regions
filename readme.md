@@ -1,6 +1,6 @@
 # :earth_africa: aws-regions
 
-Scala micro library for being able to enumerate and work with AWS regions.
+Scala micro library for AWS regions.
 
 ## Usage
 
