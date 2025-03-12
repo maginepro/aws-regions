@@ -7,7 +7,7 @@ ThisBuild / licenses := Seq(License.Apache2)
 ThisBuild / developers ++= List(
   tlGitHubDev("vlovgr", "Viktor Rudebeck")
 )
-ThisBuild / tlSonatypeUseLegacyHost := true
+ThisBuild / sonatypeCredentialHost := xerial.sbt.Sonatype.sonatypeLegacy
 
 val Scala3 = "3.3.5"
 ThisBuild / crossScalaVersions := Seq("2.13.16", Scala3)
