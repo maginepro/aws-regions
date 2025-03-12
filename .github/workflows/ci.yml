@@ -209,7 +209,7 @@ jobs:
           SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
           SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
           SONATYPE_CREDENTIAL_HOST: ${{ secrets.SONATYPE_CREDENTIAL_HOST }}
-        run: sbt -Dsun.net.client.defaultReadTimeout=60000 -Dsun.net.client.defaultConnectTimeout=60000 tlCiRelease
+        run: sbt tlCiRelease
 
   dependency-submission:
     name: Submit Dependencies

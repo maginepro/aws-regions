@@ -11,16 +11,6 @@ inThisBuild(
       tlGitHubDev("vlovgr", "Viktor Rudebeck")
     ),
     githubWorkflowJavaVersions := Seq(JavaSpec.temurin("17")),
-    githubWorkflowPublish := githubWorkflowPublish.value.map {
-      case sbt: WorkflowStep.Sbt =>
-        sbt.withCommands(
-          List(
-            "-Dsun.net.client.defaultReadTimeout=60000",
-            "-Dsun.net.client.defaultConnectTimeout=60000"
-          ) ++ sbt.commands
-        )
-      case other => other
-    },
     tlUntaggedAreSnapshots := false,
     crossScalaVersions := Seq("2.13.16", scala3Version),
     scalaVersion := scala3Version
