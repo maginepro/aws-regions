@@ -15,8 +15,8 @@ inThisBuild(
       case sbt: WorkflowStep.Sbt =>
         sbt.withCommands(
           List(
-            "-Dsun.net.client.defaultReadTimeout=60000",
-            "-Dsun.net.client.defaultConnectTimeout=60000"
+            "-Dsun.net.client.defaultReadTimeout=1800000",
+            "-Dsun.net.client.defaultConnectTimeout=1800000"
           ) ++ sbt.commands
         )
       case other => other
