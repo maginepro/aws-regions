@@ -43,6 +43,6 @@ lazy val ciris = crossProject(JVMPlatform, JSPlatform, NativePlatform)
   .in(file("modules/ciris"))
   .settings(
     name := "aws-regions-ciris",
-    libraryDependencies += "is.cir" %%% "ciris" % "3.7.0"
+    libraryDependencies += "is.cir" %%% "ciris" % "3.8.0"
   )
   .dependsOn(core)
