@@ -33,7 +33,7 @@ lazy val core = crossProject(JVMPlatform, JSPlatform, NativePlatform)
   .in(file("modules/core"))
   .settings(name := "aws-regions")
   .nativeSettings(
-    tlVersionIntroduced := Map("2.13" -> "1.1", "3" -> "1.1")
+    tlVersionIntroduced := List("2.13", "3").map(_ -> "1.1.0").toMap
   )
 
 lazy val circe = crossProject(JVMPlatform, JSPlatform, NativePlatform)
@@ -43,7 +43,7 @@ lazy val circe = crossProject(JVMPlatform, JSPlatform, NativePlatform)
     libraryDependencies += "io.circe" %%% "circe-core" % circeVersion
   )
   .nativeSettings(
-    tlVersionIntroduced := Map("2.13" -> "1.1", "3" -> "1.1")
+    tlVersionIntroduced := List("2.13", "3").map(_ -> "1.1.0").toMap
   )
   .dependsOn(core)
 
@@ -54,6 +54,6 @@ lazy val ciris = crossProject(JVMPlatform, JSPlatform, NativePlatform)
     libraryDependencies += "is.cir" %%% "ciris" % cirisVersion
   )
   .nativeSettings(
-    tlVersionIntroduced := Map("2.13" -> "1.1", "3" -> "1.1")
+    tlVersionIntroduced := List("2.13", "3").map(_ -> "1.1.0").toMap
   )
   .dependsOn(core)
