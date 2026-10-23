@@ -31,6 +31,7 @@ lazy val root = tlCrossRootProject
 
 lazy val core = crossProject(JVMPlatform, JSPlatform, NativePlatform)
   .in(file("modules/core"))
+  .settings(headerSettings)
   .settings(name := "aws-regions")
   .nativeSettings(
     tlVersionIntroduced := List("2.13", "3").map(_ -> "1.1.0").toMap
@@ -38,6 +39,7 @@ lazy val core = crossProject(JVMPlatform, JSPlatform, NativePlatform)
 
 lazy val circe = crossProject(JVMPlatform, JSPlatform, NativePlatform)
   .in(file("modules/circe"))
+  .settings(headerSettings)
   .settings(
     name := "aws-regions-circe",
     libraryDependencies += "io.circe" %%% "circe-core" % circeVersion
@@ -49,6 +51,7 @@ lazy val circe = crossProject(JVMPlatform, JSPlatform, NativePlatform)
 
 lazy val ciris = crossProject(JVMPlatform, JSPlatform, NativePlatform)
   .in(file("modules/ciris"))
+  .settings(headerSettings)
   .settings(
     name := "aws-regions-ciris",
     libraryDependencies += "is.cir" %%% "ciris" % cirisVersion
@@ -57,3 +60,12 @@ lazy val ciris = crossProject(JVMPlatform, JSPlatform, NativePlatform)
     tlVersionIntroduced := List("2.13", "3").map(_ -> "1.1.0").toMap
   )
   .dependsOn(core)
+
+lazy val headerSettings = Seq(
+  headerLicense := Some(
+    HeaderLicense.Custom(
+      "Copyright 2025 Magine Pro\n" +
+        HeaderLicense.ALv2("2026", "Viktor Rudebeck", HeaderLicenseStyle.Detailed).text
+    )
+  )
+)
