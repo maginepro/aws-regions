@@ -14,7 +14,7 @@ libraryDependencies ++= Seq(
 )
 ```
 
-Make sure to replace `awsRegionsVersion` with a [release version](https://github.com/maginepro/aws-regions/releases).<br>
+Make sure to replace `awsRegionsVersion` with a [release version](https://github.com/vlovgr/aws-regions/releases).<br>
 Replace `%%` with `%%%` if you are using [Scala.js](https://www.scala-js.org) or [Scala Native](https://scala-native.org).
 
 ## Quick Example
@@ -28,3 +28,11 @@ Region.valid("eu-west-1") //  Right(eu-west-1)
 Region.valid("EU-WEST-1") //  Right(eu-west-1)
 Region.valid("eu-west-4") //  Left(com.magine.aws.InvalidRegion: Invalid region: eu-west-4)
 ```
+
+## License
+
+Copyright 2025 Magine Pro<br>
+Copyright 2026 Viktor Rudebeck
+
+Licensed under the [Apache License, Version 2.0](license.txt).<br>
+Created by [Viktor Rudebeck](https://github.com/vlovgr) at [Magine Pro](https://github.com/maginepro) and independently maintained since 2026.
